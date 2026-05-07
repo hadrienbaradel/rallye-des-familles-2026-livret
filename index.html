@@ -1,0 +1,2422 @@
+<!DOCTYPE html>
+        <html lang="fr">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>L'Équipe - Edition sport 2026</title>
+            <meta name="description" content="Journal sportif autour du vol de la Bannière des Champions du Massachusetts au TD Garden.">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="preload" as="image" href="assets/td-garden-banniere-volee.png">
+            <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=IBM+Plex+Mono:wght@500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap" rel="stylesheet">
+            <style>
+  :root {
+    --paper: #f6f0df;
+    --ink: #111111;
+    --muted: #5b5850;
+    --line: #d7ceb9;
+    --red: #d71920;
+    --gold: #c49a40;
+    --navy: #10233f;
+    --green: #0f5132;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: #b9b3a6;
+    color: var(--ink);
+    font-family: "Source Serif 4", Georgia, serif;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  .pages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0 36px;
+  }
+
+  .page,
+  .cover-page {
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+    background:
+      linear-gradient(rgba(17, 17, 17, 0.025) 1px, transparent 1px),
+      var(--paper);
+    background-size: 100% 5mm;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .page {
+    padding: 11mm 13mm 14mm;
+  }
+
+  .cover-page {
+    position: relative;
+    padding: 8mm;
+  }
+
+  .folio {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 8px;
+    align-items: center;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    text-transform: uppercase;
+  }
+
+  .folio-number,
+  .folio-section {
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .folio-title {
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--red);
+    letter-spacing: 0.02em;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    line-height: 0.94;
+    letter-spacing: 0;
+  }
+
+  p {
+    margin: 0;
+    font-size: 15.5px;
+    line-height: 1.4;
+  }
+
+  .front-topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 10px;
+    border-bottom: 5px solid var(--ink);
+    padding: 0 1mm 4mm;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    text-transform: uppercase;
+  }
+
+  .front-topline strong {
+    font-size: 84px;
+    line-height: 0.8;
+    color: var(--red);
+    font-weight: 900;
+  }
+
+  .front-topline span {
+    max-width: 44%;
+    font-size: 16px;
+    font-weight: 800;
+    text-align: right;
+  }
+
+  .front-hero {
+    position: relative;
+    height: 152mm;
+    margin-top: 3mm;
+    overflow: hidden;
+    background: #111;
+  }
+
+  .front-hero img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .front-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.92));
+  }
+
+  .front-copy {
+    position: absolute;
+    left: 12px;
+    right: 14px;
+    bottom: 12px;
+    color: #fff;
+  }
+
+  .front-copy h1 {
+    margin-top: 6px;
+    font-size: 56px;
+  }
+
+  .front-copy p {
+    margin-top: 8px;
+    max-width: 92%;
+    font-size: 15.5px;
+  }
+
+  .tag,
+  .section-label,
+  .lead-box span,
+  .timeline-card span,
+  .brief-grid span,
+  .credits-grid span {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 2px 7px;
+    background: var(--red);
+    color: #fff;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .front-grid,
+  .two-note-grid,
+  .basket-grid,
+  .volley-layout,
+  .report-grid,
+  .suspect-layout,
+  .kids-layout,
+  .credits-grid {
+    display: grid;
+    gap: 9px;
+  }
+
+  .front-grid {
+    grid-template-columns: 1.1fr 1fr 1fr;
+    margin-top: 3mm;
+  }
+
+  .lead-box,
+  .score-card,
+  .timeline-card {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--red);
+  }
+
+  .lead-box.dark,
+  .score-card,
+  .article-strip {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
+
+  .lead-box strong,
+  .score-card strong {
+    display: block;
+    margin: 5px 0 6px;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 30px;
+    line-height: 0.95;
+  }
+
+  .press-image {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--ink);
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .press-image img {
+    height: 65mm;
+    object-fit: cover;
+  }
+
+  .press-image figcaption {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 7px 10px;
+    font-size: 13px;
+    line-height: 1.25;
+  }
+
+  .press-image figcaption strong {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 21px;
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+
+  .archive-photo img {
+    height: 22mm;
+    filter: contrast(1.04);
+  }
+
+  .rules-photo {
+    margin-bottom: 7px;
+  }
+
+  .rules-photo img {
+    height: 39mm;
+  }
+
+  .nba-photo {
+    margin-bottom: 9px;
+  }
+
+  .nba-photo img {
+    height: 38mm;
+    object-position: center 38%;
+  }
+
+  .suspect-photo {
+    border-color: rgba(255,255,255,0.25);
+    border-top-color: var(--gold);
+    background: #151515;
+  }
+
+  .suspect-photo img {
+    height: 86mm;
+  }
+
+  .suspect-photo figcaption {
+    color: rgba(255,255,255,0.9);
+  }
+
+  .side-photo-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cover-page .lead-box {
+    padding: 7px;
+  }
+
+  .cover-page .lead-box strong {
+    font-size: 18px;
+  }
+
+  .cover-page .lead-box p {
+    font-size: 10.8px;
+    line-height: 1.22;
+  }
+
+  .article-splash {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 5px solid var(--ink);
+  }
+
+  .article-splash.tight {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
+
+  .article-splash h2 {
+    margin-top: 5px;
+    font-size: 56px;
+  }
+
+  .deck {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 16.5px;
+  }
+
+  .basket-grid {
+    grid-template-columns: 1.12fr 0.88fr;
+    margin-bottom: 9px;
+  }
+
+  .basket-feature-layout {
+    display: grid;
+    grid-template-columns: 0.78fr 1.22fr;
+    gap: 9px;
+    align-items: start;
+  }
+
+  .basket-story-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .column-article {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .column-article h3,
+  .three-columns h3,
+  .brief-grid h3 {
+    font-size: 32px;
+  }
+
+  .court {
+    position: relative;
+    height: 86mm;
+    background:
+      linear-gradient(90deg, rgba(255,255,255,0.08), transparent 20%, transparent 80%, rgba(255,255,255,0.08)),
+      #c98843;
+    border: 4px solid #fff8e8;
+    outline: 2px solid #2d2115;
+    overflow: hidden;
+  }
+
+  .basket-page .article-splash {
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+  }
+
+  .basket-page .article-splash h2 {
+    font-size: 36px;
+  }
+
+  .basket-page .deck,
+  .basket-page p {
+    font-size: 11.5px;
+    line-height: 1.24;
+  }
+
+  .basket-page .court {
+    height: 74mm;
+  }
+
+  .basket-field {
+    margin: 0;
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--red);
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .basket-field img {
+    display: block;
+    width: 100%;
+    height: 175mm;
+    object-fit: contain;
+    background: #b97025;
+  }
+
+  .basket-field figcaption {
+    display: grid;
+    gap: 2px;
+    padding: 4px 7px 5px;
+    font-size: 10.5px;
+    line-height: 1.16;
+  }
+
+  .basket-field figcaption strong {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 16px;
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+
+  .court-line,
+  .court-circle,
+  .paint,
+  .arc,
+  .hoop {
+    position: absolute;
+    border-color: #fff8e8;
+  }
+
+  .half {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    border-left: 3px solid #fff8e8;
+  }
+
+  .center {
+    width: 31mm;
+    height: 31mm;
+    border: 3px solid #fff8e8;
+    border-radius: 50%;
+    left: calc(50% - 15.5mm);
+    top: calc(50% - 15.5mm);
+  }
+
+  .paint {
+    width: 27mm;
+    height: 45mm;
+    top: calc(50% - 22.5mm);
+    border: 3px solid #fff8e8;
+  }
+
+  .paint.left {
+    left: 0;
+  }
+
+  .paint.right {
+    right: 0;
+  }
+
+  .arc {
+    width: 58mm;
+    height: 58mm;
+    top: calc(50% - 29mm);
+    border: 3px solid #fff8e8;
+    border-radius: 50%;
+  }
+
+  .arc.left {
+    left: -35mm;
+  }
+
+  .arc.right {
+    right: -35mm;
+  }
+
+  .hoop {
+    width: 7mm;
+    height: 7mm;
+    top: calc(50% - 3.5mm);
+    border: 3px solid #fff8e8;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .hoop.left {
+    left: 8mm;
+  }
+
+  .hoop.right {
+    right: 8mm;
+  }
+
+  .player {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 13mm;
+    height: 13mm;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--ink);
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    box-shadow: 0 3px 0 rgba(0,0,0,0.22);
+  }
+
+  .p1 { left: 13%; top: 18%; }
+  .p2 { left: 27%; top: 34%; }
+  .p3 { left: 15%; top: 63%; }
+  .p4 { left: 37%; top: 72%; }
+  .p5 { left: 35%; top: 16%; }
+  .p6 { right: 13%; top: 18%; }
+  .p7 { right: 27%; top: 34%; }
+  .p8 { right: 15%; top: 63%; }
+  .p9 { right: 37%; top: 72%; }
+  .p10 { right: 35%; top: 16%; }
+
+  .chasuble-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 12px;
+  }
+
+  .chasuble-table th {
+    background: var(--ink);
+    color: #fff;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  .chasuble-table th,
+  .chasuble-table td {
+    padding: 7px 8px;
+    border: 1px solid var(--line);
+    text-align: left;
+  }
+
+  .chasubles-page .chasuble-table th,
+  .chasubles-page .chasuble-table td {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .chasubles-page .lead-box {
+    padding: 8px;
+  }
+
+  .chasubles-page .lead-box strong {
+    font-size: 21px;
+  }
+
+  .blank {
+    display: block;
+    height: 16px;
+    border-bottom: 1px solid #777;
+  }
+
+  .blank.small {
+    min-width: 22mm;
+  }
+
+  .two-note-grid {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 8px;
+  }
+
+  .volley-layout,
+  .suspect-layout,
+  .kids-layout {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  .timeline-card strong {
+    display: block;
+    margin-top: 8px;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 28px;
+    line-height: 0.85;
+  }
+
+  .timeline-card.compact {
+    padding: 8px;
+  }
+
+  .timeline-card.compact strong {
+    margin-top: 5px;
+    font-size: 22px;
+  }
+
+  .timeline-card.compact p {
+    font-size: 10.8px;
+    line-height: 1.18;
+  }
+
+  .rule-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .volley-page .article-splash {
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+  }
+
+  .volley-page .article-splash h2 {
+    font-size: 36px;
+  }
+
+  .volley-page .deck,
+  .volley-page p {
+    font-size: 10.8px;
+    line-height: 1.18;
+  }
+
+  .volley-page .column-article {
+    gap: 5px;
+  }
+
+  .volley-page .rule-grid {
+    gap: 5px;
+    margin-top: 7px;
+  }
+
+  .rule-grid article {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    gap: 8px;
+    padding: 8px;
+    background: #fff;
+    border-left: 4px solid var(--green);
+  }
+
+  .volley-page .rule-grid article {
+    grid-template-columns: 21px 1fr;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .rule-grid span,
+  .rules-list span,
+  .quiz-item span {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 900;
+  }
+
+  .volley-board {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 10px;
+  }
+
+  .volley-court {
+    position: relative;
+    min-height: 104mm;
+    background: #d07d3e;
+    border: 4px solid #fff8e8;
+    outline: 2px solid #2d2115;
+  }
+
+  .net {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    border-top: 4px double #fff8e8;
+  }
+
+  .zone {
+    position: absolute;
+    padding: 4px 7px;
+    background: #fff;
+    border: 1px solid var(--ink);
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .z1 { left: 8mm; bottom: 10mm; }
+  .z2 { right: 8mm; bottom: 28mm; }
+  .z3 { left: 18mm; top: 58mm; }
+  .z4 { right: 9mm; top: 41mm; }
+  .z5 { left: 9mm; top: 27mm; }
+  .z6 { right: 14mm; top: 10mm; }
+
+  .volley-board-page .volley-court {
+    min-height: 72mm;
+  }
+
+  .volley-board-page .rule-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 6px;
+  }
+
+  .volley-board-page .rule-grid article {
+    grid-template-columns: 18px 1fr;
+    gap: 4px;
+    padding: 5px;
+  }
+
+  .volley-board-page .rule-grid p {
+    font-size: 8.8px;
+    line-height: 1.1;
+  }
+
+  .volley-board-page .pull-quote {
+    margin-top: 6px;
+    padding: 8px;
+    font-size: 20px;
+  }
+
+  .pull-quote,
+  .article-strip {
+    margin-top: 12px;
+    padding: 12px;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 0.95;
+    border-left: 7px solid var(--red);
+    background: #fff;
+  }
+
+  .newspaper-article h2 {
+    margin-top: 5px;
+    font-size: 39px;
+  }
+
+  .byline,
+  .source-note {
+    margin: 7px 0 10px;
+    color: var(--muted);
+    font-size: 11px;
+    font-style: italic;
+  }
+
+  .news-columns {
+    column-count: 2;
+    column-gap: 12px;
+  }
+
+  .news-columns p {
+    margin-bottom: 9px;
+  }
+
+  .mini-news p {
+    margin-bottom: 4px;
+    font-size: 9.4px;
+    line-height: 1.13;
+  }
+
+  .history-layout,
+  .boston-layout,
+  .marathon-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .news-layout {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 9px;
+    margin-bottom: 8px;
+  }
+
+  .news-layout .column-article h3 {
+    font-size: 21px;
+    margin-top: 4px;
+  }
+
+  .news-layout .lead-box strong {
+    font-size: 16px;
+  }
+
+  .news-layout .lead-box p,
+  .news-layout .column-article p {
+    font-size: 11px;
+    line-height: 1.26;
+  }
+
+  .bruins-page .article-splash h2,
+  .revolution-page .article-splash h2,
+  .pwhl-page .article-splash h2,
+  .patriots-page .article-splash h2,
+  .mythic-page .article-splash h2 {
+    font-size: 34px;
+  }
+
+  .bruins-page .deck,
+  .revolution-page .deck,
+  .pwhl-page .deck,
+  .patriots-page .deck,
+  .mythic-page .deck {
+    font-size: 12px;
+  }
+
+  .bruins-page .pull-quote,
+  .revolution-page .pull-quote,
+  .pwhl-page .pull-quote,
+  .patriots-page .pull-quote {
+    margin-top: 8px;
+    padding: 7px 10px;
+    font-size: 13.5px;
+    line-height: 1.2;
+  }
+
+  .bruins-page .stat-row span,
+  .revolution-page .stat-row span,
+  .pwhl-page .stat-row span,
+  .patriots-page .stat-row span {
+    font-size: 44px;
+    line-height: 0.85;
+  }
+
+  .mythic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .mythic-card {
+    min-height: 64mm;
+    padding: 9px 10px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--red);
+  }
+
+  .mythic-card.dark {
+    color: #fff;
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+
+  .mythic-card span {
+    display: inline-block;
+    margin-bottom: 6px;
+    padding: 3px 5px;
+    background: var(--red);
+    color: #fff;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .mythic-card h3 {
+    font-size: 25px;
+    margin-bottom: 6px;
+  }
+
+  .mythic-card p {
+    font-size: 12px;
+    line-height: 1.28;
+  }
+
+  .mythic-stat {
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 10px;
+  }
+
+  .mythic-stat div {
+    padding: 9px;
+  }
+
+  .mythic-stat span {
+    font-size: 32px;
+    line-height: 0.85;
+  }
+
+  .basket-history-page .article-splash h2,
+  .report-page .article-splash h2,
+  .marathon-page .article-splash h2 {
+    font-size: 36px;
+  }
+
+  .basket-history-page p,
+  .report-page p,
+  .marathon-page p,
+  .briefs-page p {
+    font-size: 11.2px;
+    line-height: 1.22;
+  }
+
+  .report-story {
+    column-count: 2;
+    column-gap: 12px;
+    margin-bottom: 9px;
+  }
+
+  .report-story p {
+    margin-bottom: 7px;
+  }
+
+  .compact-report {
+    gap: 7px;
+  }
+
+  .compact-report .lead-box {
+    padding: 8px;
+  }
+
+  .compact-report .lead-box strong {
+    font-size: 20px;
+  }
+
+  .rules-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .rules-archive .rules-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px 6px;
+  }
+
+  .rules-list li {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+    align-items: start;
+    padding: 5px 7px;
+    background: #fff;
+    border-left: 3px solid var(--red);
+  }
+
+  .rules-list p {
+    font-size: 9.9px;
+    line-height: 1.12;
+  }
+
+  .report-grid,
+  .brief-grid,
+  .quiz-grid,
+  .credits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .three-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px;
+  }
+
+  .nba-page .article-splash {
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+  }
+
+  .nba-page .article-splash h2 {
+    font-size: 36px;
+  }
+
+  .nba-page .deck,
+  .nba-page p {
+    font-size: 10.8px;
+    line-height: 1.18;
+  }
+
+  .nba-page .three-columns {
+    gap: 6px;
+  }
+
+  .nba-page .three-columns article {
+    padding: 7px;
+  }
+
+  .nba-page .three-columns h3 {
+    font-size: 21px;
+  }
+
+  .nba-page .stat-row {
+    margin-top: 7px;
+  }
+
+  .boston-layout {
+    grid-template-columns: 0.98fr 1.02fr;
+    align-items: stretch;
+    margin-bottom: 8px;
+  }
+
+  .boston-layout h3 {
+    font-size: 25px;
+  }
+
+  .puerto-photo img {
+    height: 50mm;
+    object-position: center center;
+  }
+
+  .puerto-photo figcaption {
+    padding: 5px 7px;
+  }
+
+  .boston-briefs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .three-columns article,
+  .brief-grid article,
+  .quiz-item,
+  .credits-grid article {
+    padding: 9px;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    margin-top: 12px;
+    background: var(--ink);
+  }
+
+  .stat-row div {
+    padding: 12px;
+    background: #fff;
+  }
+
+  .stat-row span {
+    display: block;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 62px;
+    line-height: 0.8;
+    font-weight: 900;
+    color: var(--red);
+  }
+
+  .brief-grid,
+  .quiz-grid,
+  .credits-grid {
+    display: grid;
+    gap: 9px;
+  }
+
+  .campus-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 6px;
+    margin: 10px 0;
+  }
+
+  .crest {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 1;
+    color: #fff;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 34px;
+    font-weight: 900;
+    border: 4px solid #fff;
+    outline: 1px solid var(--line);
+  }
+
+  .red { background: #991b1b; }
+  .scarlet { background: #c1121f; }
+  .maroon { background: #6d1f2a; }
+  .black { background: #111; }
+  .navy { background: var(--navy); }
+  .owl { background: #1b509e; }
+
+  .campus-owl-image {
+    margin: 0 0 7px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid var(--line);
+  }
+
+  .campus-owl-image img {
+    height: 34mm;
+    object-fit: cover;
+    object-position: 48% 40%;
+  }
+
+  .campus-owl-image figcaption {
+    padding: 4px 5px;
+    background: #fff;
+    color: var(--muted);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7.2px;
+    line-height: 1.18;
+    text-transform: uppercase;
+  }
+
+  .campus-feature-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .owl-feature {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 5px solid #1b509e;
+  }
+
+  .owl-kicker {
+    display: block;
+    margin-bottom: 4px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    color: #1b509e;
+  }
+
+  .owl-feature h3 {
+    margin-bottom: 6px;
+    font-size: 23px;
+    line-height: 0.95;
+  }
+
+  .owl-feature p {
+    margin-bottom: 6px;
+    font-size: 11.3px;
+    line-height: 1.24;
+  }
+
+  .owl-stat-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-top: 7px;
+  }
+
+  .owl-stat-strip div {
+    padding: 5px 4px;
+    text-align: center;
+    background: #eaf1fb;
+    border: 1px solid #c7d8f0;
+  }
+
+  .owl-stat-strip b {
+    display: block;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 24px;
+    line-height: 0.85;
+    color: #1b509e;
+  }
+
+  .owl-stat-strip span {
+    display: block;
+    margin-top: 3px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 7.5px;
+    text-transform: uppercase;
+  }
+
+  .wide {
+    padding: 10px;
+    background: #fff;
+    border-top: 5px solid var(--ink);
+  }
+
+  .editorial {
+    font-size: 12.4px;
+  }
+
+  .marathon-layout {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+
+  .marathon-layout h3,
+  .baseball-note h3 {
+    font-size: 25px;
+  }
+
+  .charles-photo img {
+    height: 72mm;
+    object-fit: cover;
+    object-position: center 42%;
+  }
+
+  .baseball-note {
+    margin-top: 9px;
+    padding: 9px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-left: 6px solid var(--red);
+  }
+
+  .baseball-note span {
+    display: inline-flex;
+    margin-bottom: 5px;
+    padding: 2px 7px;
+    background: var(--ink);
+    color: #fff;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .tanglewood-page .article-splash h2 {
+    font-size: 40px;
+  }
+
+  .tanglewood-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .tanglewood-main {
+    padding: 10px;
+    background: #fff;
+    border-top: 5px solid var(--ink);
+  }
+
+  .tanglewood-main p,
+  .tanglewood-timeline p,
+  .tanglewood-bottom p {
+    font-size: 12.5px;
+    line-height: 1.25;
+  }
+
+  .tanglewood-timeline {
+    display: grid;
+    gap: 8px;
+  }
+
+  .tanglewood-timeline article,
+  .tanglewood-bottom article {
+    padding: 9px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-top: 5px solid var(--red);
+  }
+
+  .tanglewood-timeline span,
+  .tanglewood-bottom span {
+    display: inline-flex;
+    margin-bottom: 5px;
+    padding: 2px 7px;
+    background: var(--ink);
+    color: #fff;
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .tanglewood-timeline span {
+    background: var(--red);
+  }
+
+  .tanglewood-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    margin-top: 9px;
+  }
+
+  .suspect-card {
+    padding: 12px;
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .mugshot {
+    display: grid;
+    place-items: center;
+    height: 56mm;
+    margin-bottom: 10px;
+    border: 2px solid rgba(255,255,255,0.7);
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 54px;
+    font-weight: 900;
+    color: var(--gold);
+  }
+
+  .suspect-card h3 {
+    font-size: 29px;
+    margin-bottom: 6px;
+  }
+
+  .quiz-item {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 8px;
+  }
+
+  .quiz-page .article-splash {
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+  }
+
+  .quiz-page .article-splash h2 {
+    font-size: 34px;
+  }
+
+  .quiz-page .deck,
+  .quiz-page .quiz-item p {
+    font-size: 11px;
+    line-height: 1.18;
+  }
+
+  .quiz-page .quiz-grid {
+    gap: 6px;
+  }
+
+  .quiz-page .quiz-item {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .quiz-item .write-line {
+    grid-column: 1 / -1;
+    height: 11px;
+    border-bottom: 1px solid #777;
+  }
+
+  .word-search {
+    display: grid;
+    gap: 4px;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid var(--line);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+  }
+
+  .kids-page .article-splash {
+    margin-bottom: 6px;
+    padding-bottom: 6px;
+  }
+
+  .kids-page .article-splash h2 {
+    font-size: 33px;
+  }
+
+  .kids-page .deck {
+    font-size: 11px;
+    line-height: 1.15;
+  }
+
+  .compact-kids {
+    grid-template-columns: 0.74fr 1.26fr;
+    gap: 7px;
+  }
+
+  .compact-kids .word-search {
+    gap: 2px;
+    padding: 6px;
+    font-size: 10.2px;
+  }
+
+  .compact-kids h3 {
+    font-size: 20px;
+  }
+
+  .compact-kids .word-list {
+    gap: 4px;
+    margin-top: 4px;
+  }
+
+  .compact-kids .word-list li {
+    padding: 3px 4px;
+    font-size: 13px;
+  }
+
+  .game-stack {
+    display: grid;
+    gap: 6px;
+    margin-top: 7px;
+  }
+
+  .game-stack figure {
+    margin: 0;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid var(--line);
+  }
+
+  .game-stack img {
+    height: 38mm;
+    object-fit: contain;
+  }
+
+  .game-stack figure:first-child img {
+    height: 52mm;
+  }
+
+  .word-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .word-list li {
+    padding: 5px;
+    background: #fff;
+    border: 1px solid var(--line);
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 800;
+  }
+
+  .drawing-box {
+    display: grid;
+    place-items: center;
+    min-height: 61mm;
+    margin-top: 10px;
+    border: 2px dashed #8e8679;
+    background: rgba(255,255,255,0.55);
+    color: var(--muted);
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 27px;
+    font-weight: 800;
+  }
+
+  .credits-page h2 {
+    margin: 6px 0 12px;
+    font-size: 48px;
+  }
+
+  .back-headline {
+    margin-top: 20mm;
+    padding-top: 7mm;
+    border-top: 8px solid var(--ink);
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-size: 70px;
+    line-height: 0.8;
+    color: var(--red);
+    font-weight: 900;
+    text-align: center;
+  }
+
+  .backline {
+    margin: 9px auto 0;
+    max-width: 82%;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  @media print {
+    body {
+      background: #fff;
+    }
+
+    .pages {
+      display: block;
+      padding: 0;
+      gap: 0;
+    }
+
+    .page,
+    .cover-page {
+      box-shadow: none;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .page,
+    .cover-page {
+      width: min(210mm, calc(100vw - 24px));
+    }
+  }
+</style>
+            <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                const page = new URLSearchParams(window.location.search).get("page");
+                if (!page) return;
+                const index = Number(page) - 1;
+                const pages = Array.from(document.querySelectorAll(".pages > section"));
+                pages.forEach((node, i) => {
+                  if (i !== index) node.style.display = "none";
+                });
+              });
+            </script>
+          </head>
+          <body>
+            <main class="pages">
+              <section class="cover-page"><div class="front-topline">
+  <strong>L’ÉQUIPE</strong>
+  <span>Boston | Edition spéciale du 30 Mai 2026</span>
+</div>
+<section class="front-hero">
+  <img src="assets/td-garden-banniere-volee.png" alt="Vitrine vide de la bannière au TD Garden">
+  <div class="front-shade"></div>
+  <div class="front-copy">
+    <span class="tag">Cette nuit au TD Garden</span>
+    <h1>LA BANNIÈRE DES CHAMPIONS A DISPARU</h1>
+    <p>Le TD Garden s'est réveillé sans son emblème. La Bannière des Champions du Massachusetts aurait été retirée de sa vitrine après une extinction partielle. Des attaches et des pièces textiles retrouvées au sol laissent penser à un démontage méthodique.</p>
+  </div>
+</section>
+<section class="front-grid">
+  <article class="lead-box dark">
+    <span>Suspect n°1</span>
+    <strong>Doudou Grosse Bitume</strong>
+    <p>Le surnom circule depuis l'aube. Il évoque ces casses spectaculaires où vitrine, monte-charge et fuite en deux-roues transforment le vol en récit public. Les enquêteurs restent prudents, mais la piste file déjà vers l'ouest du Massachusetts.</p>
+  </article>
+  <article class="lead-box">
+    <span>Objet volé</span>
+    <strong>La Bannière des Champions du Massachusetts</strong>
+    <p>Ni simple coupe, ni décor de tribune: la bannière réunit les couleurs d'équipes qui ont façonné la région, des parquets aux patinoires, des stades aux campus. Sa disparition touche autant les vestiaires que les gradins.</p>
+  </article>
+  <article class="lead-box">
+    <span>Ce soir</span>
+    <strong>Spurs-Celtics au Garden</strong>
+    <p>La salle volée n'a pas le temps de se taire: San Antonio arrive avec Wembanyama, Boston répond avec son collectif vert. Le choc NBA donnera au journal son grand décor sportif.</p>
+  </article>
+</section></section><section class="page report-page">
+          <header class="folio">
+  <span class="folio-number">02</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Enquête</span>
+</header>
+          <section class="article-splash">
+  <div class="section-label">Rapport de vol</div>
+  <h2>Extinction partielle, monte-charge et départ à moto</h2>
+  <p class="deck">La nuit du casse dessine une opération courte, organisée autour des accès de service. La bannière n'aurait pas quitté la salle d'un seul tenant.</p>
+</section>
+<section class="report-story">
+  <p>Peu après le passage de l'enceinte en éclairage réduit, une activité inhabituelle est signalée près d'un couloir technique. La vitrine de la Bannière des Champions du Massachusetts est ensuite découverte ouverte. Aucun mouvement de foule, aucun bris spectaculaire: seulement un vide, des attaches au sol et la sensation d'un geste préparé.</p>
+  <p>Les enquêteurs appelés depuis Boston s'intéressent particulièrement au monte-charge reliant les zones arrière. C'est là que plusieurs témoins disent avoir entendu un bruit métallique, puis un moteur lointain. Quelques minutes plus tard, un deux-roues puissant, peu courant à Boston, aurait été entendu près des abords du Garden.</p>
+  <p>Lorsque la police arrive, bientôt suivie par des agents fédéraux, la piste n'est déjà plus seulement bostonienne. Plusieurs éléments orientent les recherches vers l'ouest du Massachusetts, avant un échange avec des équipes françaises familières de signatures de casse plus théâtrales que discrètes.</p>
+</section>
+<section class="report-grid compact-report">
+  <article class="lead-box dark"><span>00h42</span><strong>Extinction partielle</strong><p>La salle passe en mode nuit. Une présence est notée près des accès techniques.</p></article>
+  <article class="lead-box"><span>00h57</span><strong>Bruit de monte-charge</strong><p>Un accrochage métallique est entendu dans les circulations arrière.</p></article>
+  <article class="lead-box"><span>01h08</span><strong>Moteur entendu</strong><p>Un deux-roues puissant, peu courant à Boston, est entendu puis signalé sur un axe secondaire.</p></article>
+  <article class="lead-box"><span>01h21</span><strong>Police puis FBI</strong><p>La zone est isolée, les images copiées, la piste élargie hors de Boston.</p></article>
+</section>
+        </section><section class="page suspect-page">
+          <header class="folio">
+  <span class="folio-number">03</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Profil</span>
+</header>
+          <section class="article-splash">
+          <div class="section-label">Profil</div>
+          <h2>Doudou Grosse Bitume, un nom qui voyage plus vite que le dossier</h2>
+          <p class="deck">Le pseudonyme amuse les réseaux, mais il décrit surtout une silhouette de récit: un casseur qui connaît la puissance des objets symboliques.</p>
+        </section>
+        <section class="suspect-layout">
+          <div class="suspect-card">
+            <figure class="press-image suspect-photo">
+  <img src="assets/doudou-couloir-garden.png" alt="Couloir de service">
+  <figcaption>
+    <strong>Couloir de service</strong>
+    <span>Une silhouette quitte le parquet tandis qu&#x27;un morceau de bannière reste au sol.</span>
+  </figcaption>
+</figure>
+            <h3>Doudou Grosse Bitume</h3>
+          </div>
+          <article class="column-article">
+            <h3>Une signature plus qu'un visage</h3>
+            <p>Dans les premières heures, le nom revient avec insistance. Il ne désigne pas une personne identifiée publiquement; il fonctionne comme le surnom d'un personnage de casse, né d'images partielles, de récits de couloir et d'une fuite assez voyante pour devenir une histoire.</p>
+            <p>Le choix du TD Garden n'a rien d'anodin. Faire disparaître une bannière de champions dans une salle où cohabitent basketball, hockey et mémoire de Boston revient à toucher une vitrine entière du sport local.</p>
+            <p>Le dossier prend assez d'ampleur pour être transmis à des équipes françaises déjà familières de ce type de mise en scène. Dans leur lecture, Doudou Grosse Bitume n'est pas seulement un voleur: c'est quelqu'un qui veut que le vol parle.</p>
+          </article>
+        </section>
+        </section><section class="page basket-page">
+          <header class="folio">
+  <span class="folio-number">04</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Basket</span>
+</header>
+          <section class="article-splash">
+          <div class="section-label">Basket | TD Garden</div>
+          <h2>Spurs-Celtics: Wembanyama défie la forteresse verte</h2>
+          <p class="deck">Ce soir, le TD Garden accueille une affiche qui dépasse le calendrier: Boston avance avec son collectif installé, San Antonio avec Victor Wembanyama et une génération qui grandit vite.</p>
+        </section>
+        <section class="basket-feature-layout">
+          <div class="basket-story-stack">
+            <article class="column-article">
+              <h3>Une soirée pour mesurer deux époques</h3>
+              <p>Boston reçoit San Antonio avec cette autorité particulière des équipes qui savent défendre chaque possession. Les Celtics veulent imposer leur rythme, verrouiller la raquette et pousser les Spurs à tirer loin de leurs zones préférées.</p>
+              <p>En face, Wembanyama oblige tout le monde à lever les yeux. Sa taille modifie les tirs, ses passes déplacent les aides, et chaque ballon touché donne au Garden l'impression d'observer le futur en direct.</p>
+            </article>
+            <aside class="score-card">
+              <span>Note de parquet</span>
+              <strong>San Antonio Spurs<br>vs Boston Celtics</strong>
+              <p>Au Garden, les bannières rappellent que Boston juge les stars à l'aune des grands soirs. Pour Wembanyama, l'adresse ne suffira pas: il faudra résister au bruit, aux rotations et à la mémoire verte.</p>
+            </aside>
+          </div>
+          <figure class="basket-field">
+  <img src="assets/basketball-field.jpg" alt="Terrain de basket annoté par dix ronds numérotés">
+  <figcaption><strong>Carte du parquet</strong><span>Dix cercles numérotés rythment la lecture de l'affiche Spurs-Celtics.</span></figcaption>
+</figure>
+        </section>
+        </section><section class="page chasubles-page">
+          <header class="folio">
+  <span class="folio-number">05</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Basket</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Vestiaire NBA</div>
+  <h2>Dix cercles pour lire les couleurs du basket</h2>
+  <p class="deck">La carte du parquet propose une lecture visuelle des maillots, des héritages et des silhouettes qui peuplent l'imaginaire NBA.</p>
+</section>
+<table class="chasuble-table">
+  <thead>
+    <tr>
+      <th>Rond</th>
+      <th>Couleurs</th>
+      <th>Club pressenti</th>
+      <th>N° légende</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr>
+  <td>1</td>
+  <td>Vert &amp; jaune</td>
+  <td><span class="blank"></span></td>
+  <td><span class="blank small"></span></td>
+</tr>
+
+<tr>
+  <td>2</td>
+  <td>Bleu turquoise &amp; orange</td>
+  <td><span class="blank"></span></td>
+  <td><span class="blank small"></span></td>
+</tr>
+
+<tr>
+  <td>3</td>
+  <td>Rouge</td>
+  <td><span class="blank"></span></td>
+  <td><span class="blank small"></span></td>
+</tr>
+
+<tr>
+  <td>4</td>
+  <td>Vert</td>
+  <td><span class="blank"></span></td>
+  <td><span class="blank small"></span></td>
+</tr>
+
+<tr>
+  <td>5</td>
+  <td>Bleu &amp; orange</td>
+  <td><span class="blank"></span></td>
+  <td><span class="blank small"></span></td>
+</tr>
+
+<tr>
+  <td>6</td>
+  <td>Blanc &amp; noir</td>
+  <td><span class="blank"></span></td>
+  <td><span class="blank small"></span></td>
+</tr>
+
+<tr>
+  <td>7</td>
+  <td>Rouge, bleu clair &amp; blanc</td>
+  <td><span class="blank"></span></td>
+  <td><span class="blank small"></span></td>
+</tr>
+
+<tr>
+  <td>8</td>
+  <td>Bleu marine &amp; vert</td>
+  <td><span class="blank"></span></td>
+  <td><span class="blank small"></span></td>
+</tr>
+
+<tr>
+  <td>9</td>
+  <td>Violet &amp; jaune</td>
+  <td><span class="blank"></span></td>
+  <td><span class="blank small"></span></td>
+</tr>
+
+<tr>
+  <td>10</td>
+  <td>Noir</td>
+  <td><span class="blank"></span></td>
+  <td><span class="blank small"></span></td>
+</tr>
+</tbody>
+</table>
+<section class="two-note-grid">
+  <article class="lead-box">
+    <span>Héritage français</span>
+    <strong>Tony Parker, trait d'union des générations</strong>
+    <p>Avant Wembanyama, Tony Parker a montré qu'un meneur français pouvait gagner, durer et peser sur une dynastie NBA. San Antonio garde cette mémoire dans son ADN.</p>
+  </article>
+  <article class="lead-box dark">
+    <span>Culture Celtics</span>
+    <strong>Le vert ne se porte pas seul</strong>
+    <p>Boston aime les talents, mais son histoire récompense surtout les cinq qui jouent comme un seul bloc: défense, spacing, relance et sang-froid.</p>
+  </article>
+</section>
+        </section><section class="page volley-page">
+          <header class="folio">
+  <span class="folio-number">06</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Volley</span>
+</header>
+          <section class="article-splash">
+          <div class="section-label">Volleyball | Archives</div>
+          <h2>1895: William Morgan donne un autre rythme au ballon</h2>
+          <p class="deck">Un professeur d'éducation physique imagine une discipline moins heurtée que le basketball naissant. Son premier nom: mintonette.</p>
+        </section>
+        <section class="volley-layout">
+          <article class="column-article">
+            <h3>Un sport né pour faire circuler le jeu</h3>
+            <p>William G. Morgan travaille au YMCA quand il met au point une nouvelle pratique. Le principe est simple: faire passer un ballon au-dessus d'un filet, maintenir l'échange, organiser le collectif.</p>
+            <p>Le volleyball gardera de cette origine un mélange rare: précision du geste, communication constante, alternance entre défense et attaque.</p>
+            <h3>La mintonette remplit les tribunes</h3>
+            <div class="mini-news"><p>Plus de 92 000 personnes ont assisté à un match de mintonette du championnat universitaire américain au Memorial Stadium de Lincoln, dans le Nebraska, établissant un record mondial d&#x27;affluence pour un événement sportif féminin.</p><p>La rencontre a réuni 92 003 spectateurs et s&#x27;est conclue par la victoire nette des Huskers sur Omaha, trois manches à zéro. Les organisateurs voulaient montrer que le sport féminin pouvait remplir un stade entier; le pari a tenu.</p><p>Le nom ancien du volleyball revient ainsi sur le devant de la scène. Inventée par William Morgan en 1895, la mintonette devait offrir un jeu collectif plus souple que le basketball naissant. Elle est devenue un sport mondial.</p><p>Le précédent repère d&#x27;affluence pour une telle rencontre était très loin derrière. Le chiffre de Lincoln donne au volleyball une image nouvelle: celle d&#x27;un sport capable de rassembler une foule de finale.</p></div>
+          </article>
+          <aside class="side-photo-stack">
+            <figure class="press-image archive-photo">
+  <img src="assets/mintonette-1895.png" alt="Gymnase d&#x27;époque">
+  <figcaption>
+    <strong>Gymnase d&#x27;époque</strong>
+    <span>La mintonette naît dans une salle de bois, entre filet bas et circulation du ballon.</span>
+  </figcaption>
+</figure>
+            <div class="timeline-card compact">
+              <span>Repères</span>
+              <strong>1891</strong><p>Le basketball fixe ses premières règles.</p>
+              <strong>1895</strong><p>Mintonette créée par William G. Morgan.</p>
+              <strong>Aujourd'hui</strong><p>Le volleyball est joué partout dans le monde.</p>
+            </div>
+          </aside>
+        </section>
+        </section><section class="page volley-board-page">
+          <header class="folio">
+  <span class="folio-number">07</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Volley</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Cahier technique</div>
+  <h2>Réception, passe, attaque: la mécanique d'un point</h2>
+  <p class="deck">Le volleyball se comprend comme une chaîne de responsabilités. Une balle mal reçue limite la passe; une passe imprécise réduit l'attaque.</p>
+</section>
+<section class="volley-board">
+  <div class="volley-court">
+    <div class="net"></div>
+    <span class="zone z1">Service</span>
+    <span class="zone z2">Réception</span>
+    <span class="zone z3">Passe</span>
+    <span class="zone z4">Attaque</span>
+    <span class="zone z5">Bloc</span>
+    <span class="zone z6">Défense</span>
+  </div>
+  <article class="column-article">
+    <h3>La force du lien</h3>
+    <p>Dans le basket, un joueur peut parfois éclairer une possession. Au volley, la balle impose une dépendance immédiate: presque chaque action prépare celle d'un autre.</p>
+    <p>C'est ce qui rend la mintonette centrale dans cette édition. Elle rappelle que le sport n'est pas seulement affaire de vitesse ou de puissance; c'est aussi l'art de rendre le prochain geste possible.</p>
+  </article>
+</section>
+<section class="rule-grid compact-rules"><article><span>1</span><p>Deux équipes se font face de part et d&#x27;autre d&#x27;un filet.</p></article><article><span>2</span><p>Le ballon doit passer au-dessus du filet sans être porté.</p></article><article><span>3</span><p>Chaque camp dispose d&#x27;un nombre limité de touches avant de renvoyer le ballon.</p></article><article><span>4</span><p>Le service lance l&#x27;échange depuis l&#x27;arrière du terrain.</p></article><article><span>5</span><p>Un point peut naître d&#x27;une attaque, d&#x27;un bloc ou d&#x27;une faute adverse.</p></article><article><span>6</span><p>Le collectif compte autant que la puissance: réception, passe et attaque forment le trio de base.</p></article></section>
+<section class="pull-quote">"Un ballon qui circule bien raconte toujours une équipe qui se parle."</section>
+        </section><section class="page basket-history-page">
+          <header class="folio">
+  <span class="folio-number">08</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Basket</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Histoire du basket</div>
+  <h2>Un ballon, deux paniers et une idée devenue mondiale</h2>
+  <p class="deck">Le basketball naît d'un besoin très simple: inventer un jeu d'intérieur assez rapide pour captiver, assez réglé pour éviter la mêlée.</p>
+</section>
+<section class="history-layout">
+  <article class="column-article">
+    <h3>Treize lignes pour cadrer le chaos</h3>
+    <p>James Naismith imagine une règle fondatrice: avancer par la passe plutôt que par la course ballon en main. Le jeu gagne tout de suite son rythme: lever la tête, se démarquer, tirer haut.</p>
+    <p>Les premiers paniers sont fermés, le ballon doit être récupéré après chaque réussite. Le détail paraît étrange aujourd'hui; il rappelle surtout que le sport s'est construit par ajustements, jusqu'à devenir un langage compris partout.</p>
+  </article>
+  <article class="column-article">
+    <h3>De la salle d'hiver aux arènes modernes</h3>
+    <p>Le basket américain s'est ensuite nourri des campus, des quartiers, des ligues professionnelles et de la télévision. La NBA a transformé ses meilleurs joueurs en repères culturels, sans effacer la logique première: cinq joueurs, un ballon, un espace à lire.</p>
+    <p>Dans cette édition, le duel Spurs-Celtics prolonge ce fil: une invention de gymnase devenue spectacle mondial, capable de remplir le Garden et de déplacer toute une ville autour d'un parquet.</p>
+  </article>
+</section>
+<section class="stat-row">
+  <div><span>1891</span><p>Premières règles rédigées</p></div>
+  <div><span>13</span><p>Règles initiales</p></div>
+  <div><span>5</span><p>Joueurs par équipe</p></div>
+</section>
+        </section><section class="page rules-archive">
+          <header class="folio">
+  <span class="folio-number">09</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Archives</span>
+</header>
+          <section class="article-splash tight">
+          <div class="section-label">Archives | Basketball</div>
+          <h2>Naismith, treize règles et deux paniers de pêches</h2>
+          <p class="deck">En 1891, James Naismith cherche un jeu d'hiver capable d'occuper ses élèves sans transformer le gymnase en mêlée permanente.</p>
+        </section>
+        <figure class="press-image rules-photo">
+  <img src="assets/naismith-peach-basket.png" alt="Hiver 1891">
+  <figcaption>
+    <strong>Hiver 1891</strong>
+    <span>Un ballon, un panier de pêches et une idée assez simple pour changer l&#x27;histoire du sport.</span>
+  </figcaption>
+</figure>
+        <ol class="rules-list">
+        <li>
+          <span>1</span>
+          <p>Le ballon peut être lancé dans n&#x27;importe quelle direction avec une ou deux mains.</p>
+        </li>
+
+        <li>
+          <span>2</span>
+          <p>Le ballon peut être frappé dans n&#x27;importe quelle direction avec une ou deux mains, jamais avec le poing.</p>
+        </li>
+
+        <li>
+          <span>3</span>
+          <p>Un joueur ne peut pas courir avec le ballon et doit le relancer depuis l&#x27;endroit où il le reçoit.</p>
+        </li>
+
+        <li>
+          <span>4</span>
+          <p>Le ballon doit être tenu dans ou entre les mains, sans usage des bras ou du corps pour le porter.</p>
+        </li>
+
+        <li>
+          <span>5</span>
+          <p>Aucune charge, tenue, poussée, crochetage ou frappe n&#x27;est autorisée.</p>
+        </li>
+
+        <li>
+          <span>6</span>
+          <p>Une faute est comptée quand un joueur frappe le ballon du poing ou enfreint les règles de contact.</p>
+        </li>
+
+        <li>
+          <span>7</span>
+          <p>Trois fautes consécutives d&#x27;une même équipe donnent un point à l&#x27;adversaire.</p>
+        </li>
+
+        <li>
+          <span>8</span>
+          <p>Un point est marqué quand le ballon entre dans le panier et y reste.</p>
+        </li>
+
+        <li>
+          <span>9</span>
+          <p>Quand le ballon sort, il est remis en jeu par la première personne qui le touche.</p>
+        </li>
+
+        <li>
+          <span>10</span>
+          <p>L&#x27;arbitre juge les joueurs, note les fautes et peut exclure un joueur.</p>
+        </li>
+
+        <li>
+          <span>11</span>
+          <p>Le juge de touche décide quand le ballon sort et chronomètre le jeu.</p>
+        </li>
+
+        <li>
+          <span>12</span>
+          <p>Le match comprend deux mi-temps de quinze minutes séparées par cinq minutes de repos.</p>
+        </li>
+
+        <li>
+          <span>13</span>
+          <p>L&#x27;équipe qui marque le plus de points gagne.</p>
+        </li>
+        </ol>
+        </section><section class="page nba-page">
+          <header class="folio">
+  <span class="folio-number">10</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">NBA</span>
+</header>
+          <section class="article-splash tight">
+          <div class="section-label">NBA</div>
+          <h2>La NBA entre héritage et nouvelle ère</h2>
+          <p class="deck">Le championnat vit une période rare: anciennes dynasties, jeunes stars déjà installées et talents hors norme se croisent chaque soir.</p>
+        </section>
+        <figure class="press-image nba-photo">
+  <img src="assets/spurs-celtics-garden.png" alt="Face-à-face au Garden">
+  <figcaption>
+    <strong>Face-à-face au Garden</strong>
+    <span>La hauteur des Spurs, la pression verte, et une ligue où chaque détail prend du poids.</span>
+  </figcaption>
+</figure>
+        <section class="three-columns">
+          <article><h3>Le futur vertical</h3><p>Wembanyama force chaque attaque à lever les yeux. Même sans ballon, sa présence déplace les trajectoires, les passes et les décisions.</p></article>
+          <article><h3>Le poids des franchises</h3><p>Boston, Denver, Milwaukee ou Golden State savent qu'une saison ne se juge pas à l'éclat d'un mois, mais à la solidité d'un printemps.</p></article>
+          <article><h3>Le fil Parker</h3><p>Tony Parker a rendu plausible une grande carrière française en NBA. Wembanyama n'hérite pas d'une exception: il prolonge une voie ouverte.</p></article>
+        </section>
+        <section class="stat-row">
+          <div><span>5</span><p>Joueurs par équipe sur le terrain</p></div>
+          <div><span>24</span><p>Secondes pour tirer en NBA</p></div>
+          <div><span>3</span><p>Points derrière l'arc</p></div>
+        </section>
+        </section><section class="page briefs-page">
+          <header class="folio">
+  <span class="folio-number">11</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Boston</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Boston</div>
+  <h2>Boston, capitale américaine de la ferveur</h2>
+  <p class="deck">Ici, les Celtics, les Red Sox, les Bruins et les Patriots occupent une place à part dans la mémoire collective. Les couleurs changent, la fidélité reste.</p>
+</section>
+<section class="boston-layout">
+  <article class="column-article">
+    <h3>Des salles qui parlent avant le coup d'envoi</h3>
+    <p>Le TD Garden, Fenway Park ou les routes du marathon racontent une même histoire: celle d'une ville exigeante, parfois rude, toujours fidèle. A Boston, gagner compte; appartenir à une tribune compte presque autant.</p>
+    <p>Les Patriots ajoutent à cette géographie une banlieue devenue capitale du dimanche. Foxborough a offert à la Nouvelle-Angleterre six titres au Super Bowl et une dynastie qui a installé le football américain dans le langage local.</p>
+  </article>
+  <figure class="press-image puerto-photo">
+    <img src="assets/puerto-rico-super-bowl.jpg" alt="Référence visuelle Porto Rico et Super Bowl">
+    <figcaption><strong>Porto Rico au Super Bowl</strong><span>Le football américain croise aussi la scène musicale: l'imagerie portoricaine rappelle combien le Super Bowl dépasse le terrain.</span></figcaption>
+  </figure>
+</section>
+<section class="brief-grid boston-briefs">
+  <article><span>Basket</span><h3>Le vert comme signature</h3><p>Les Celtics donnent au Garden une identité immédiatement reconnaissable, entre parquet clair et bannières historiques.</p></article>
+  <article><span>Football</span><h3>Les Patriots, six bagues et un territoire</h3><p>La franchise de Foxborough a transformé la Nouvelle-Angleterre en place forte du football américain moderne.</p></article>
+</section>
+        </section><section class="page mythic-page">
+          <header class="folio">
+  <span class="folio-number">12</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Légendes</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Matchs mythiques | Massachusetts</div>
+  <h2>Quatre soirs où la région a basculé</h2>
+  <p class="deck">Le Massachusetts ne garde pas seulement des titres: il conserve des fins de match, des bruits de salle et des gestes qui ont changé la suite.</p>
+</section>
+<section class="mythic-grid">
+  <article class="mythic-card">
+    <span>Boston Garden | NBA Finals 1984</span>
+    <h3>Celtics-Lakers, la chaleur d'un Game 7</h3>
+    <p>Le 12 juin 1984, Boston ferme la série contre Los Angeles dans un Garden irrespirable. Victoire 111-102, Larry Bird élu MVP des Finales, Cedric Maxwell immense dans les minutes dures: la rivalité Celtics-Lakers retrouve alors son épaisseur historique.</p>
+  </article>
+  <article class="mythic-card dark">
+    <span>Fenway Park | ALCS 2004</span>
+    <h3>La nuit où les Red Sox refusent la fin</h3>
+    <p>Menés trois matchs à zéro par les Yankees, les Red Sox sauvent leur saison le 17 octobre 2004. Dave Roberts vole la deuxième base, Bill Mueller égalise, David Ortiz conclut en douzième manche. Fenway vient d'ouvrir la plus folle remontée du baseball moderne.</p>
+  </article>
+  <article class="mythic-card dark">
+    <span>Boston Garden | Stanley Cup 1970</span>
+    <h3>Bobby Orr s'envole pour toujours</h3>
+    <p>Le 10 mai 1970, les Bruins battent St. Louis 4-3 en prolongation. Bobby Orr marque, trébuche dans l'élan et reste suspendu sur l'image la plus célèbre du hockey bostonien. Une coupe, un but, une photo: parfois un sport tient dans un fragment de seconde.</p>
+  </article>
+  <article class="mythic-card">
+    <span>Foxboro Stadium | AFC Divisional 2002</span>
+    <h3>Le Snow Bowl, neige et nerfs d'acier</h3>
+    <p>Dans la tempête du 19 janvier 2002, Patriots-Raiders devient le match de la règle du tuck. Adam Vinatieri égalise sur un coup de pied invraisemblable dans la neige, puis New England gagne 16-13 en prolongation. La dynastie naît presque dans le blizzard.</p>
+  </article>
+</section>
+<section class="stat-row mythic-stat">
+  <div><span>111-102</span><p>Celtics-Lakers, Game 7 1984</p></div>
+  <div><span>6-4</span><p>Red Sox-Yankees, douze manches</p></div>
+  <div><span>4-3</span><p>Bruins-Blues, but d'Orr</p></div>
+  <div><span>16-13</span><p>Patriots-Raiders dans la neige</p></div>
+</section>
+        </section><section class="page mythic-page">
+          <header class="folio">
+  <span class="folio-number">13</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Légendes</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Matchs mythiques | Massachusetts</div>
+  <h2>Du Garden à Harvard, les matchs qui restent</h2>
+  <p class="deck">Certaines affiches ne vieillissent pas: elles deviennent des repères, transmis de tribune en tribune longtemps après le dernier coup de sifflet.</p>
+</section>
+<section class="mythic-grid">
+  <article class="mythic-card dark">
+    <span>TD Garden | NBA Finals 2008</span>
+    <h3>Le 17e titre revient dans le vacarme</h3>
+    <p>Le 17 juin 2008, les Celtics écrasent les Lakers 131-92 dans le Game 6. Paul Pierce, Kevin Garnett et Ray Allen rendent à Boston un titre attendu depuis 1986. Le Garden ne célèbre pas seulement un score large: il referme vingt-deux ans d'attente.</p>
+  </article>
+  <article class="mythic-card">
+    <span>TD Garden | NHL Playoffs 2013</span>
+    <h3>Bruins-Leafs, le retour impossible</h3>
+    <p>Le 13 mai 2013, Boston est mené 4-1 par Toronto en troisième période du Game 7. Les Bruins arrachent l'égalité, puis Patrice Bergeron marque en prolongation. Le TD Garden voit une série basculer d'un silence lourd à une explosion totale.</p>
+  </article>
+  <article class="mythic-card">
+    <span>Harvard Stadium | Football 1968</span>
+    <h3>Harvard bat Yale, 29-29</h3>
+    <p>Le 23 novembre 1968, Harvard arrache le nul contre Yale après seize points dans les dernières secondes. Le score officiel dit 29-29; le titre du journal étudiant entre dans la légende. Dans le sport universitaire, la mémoire choisit parfois son vainqueur.</p>
+  </article>
+  <article class="mythic-card dark">
+    <span>Foxboro Stadium | Coupe du monde 1994</span>
+    <h3>Baggio fait lever Foxboro</h3>
+    <p>Le 9 juillet 1994, l'Italie bat l'Espagne 2-1 en quart de finale de Coupe du monde à Foxboro. Roberto Baggio marque tard, les tribunes du Massachusetts découvrent une tension de football mondial, et le stade entre dans une histoire qui dépasse la Nouvelle-Angleterre.</p>
+  </article>
+</section>
+<section class="stat-row mythic-stat">
+  <div><span>131-92</span><p>Celtics-Lakers, titre 2008</p></div>
+  <div><span>5-4</span><p>Bruins-Leafs, prolongation</p></div>
+  <div><span>29-29</span><p>Harvard-Yale, nul légendaire</p></div>
+  <div><span>2-1</span><p>Italie-Espagne à Foxboro</p></div>
+</section>
+        </section><section class="page mythic-page">
+          <header class="folio">
+  <span class="folio-number">14</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Finales</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Grandes affiches | Massachusetts</div>
+  <h2>Foxborough, le Garden et les finales qui voyagent</h2>
+  <p class="deck">Le Massachusetts n'a pas seulement ses clubs: il reçoit aussi des matchs qui appartiennent à l'histoire nationale du sport américain.</p>
+</section>
+<section class="mythic-grid">
+  <article class="mythic-card">
+    <span>Foxboro Stadium | MLS Cup 1996</span>
+    <h3>La première finale MLS sous la pluie</h3>
+    <p>Le 20 octobre 1996, la nouvelle ligue américaine choisit Foxborough pour son premier grand rendez-vous. D.C. United remonte deux buts, bat le LA Galaxy 3-2 en prolongation et donne au soccer professionnel moderne une scène fondatrice, trempée jusqu'aux lignes de touche.</p>
+  </article>
+  <article class="mythic-card dark">
+    <span>Foxboro Stadium | Qualification 2001</span>
+    <h3>Joe-Max Moore ferme le vieux stade</h3>
+    <p>En octobre 2001, les Etats-Unis battent la Jamaïque 2-1 devant 40 483 spectateurs. Joe-Max Moore marque deux fois, l'équipe nationale valide son billet mondial, et Foxboro Stadium vit son dernier grand match de soccer avant de céder la place à Gillette.</p>
+  </article>
+  <article class="mythic-card dark">
+    <span>Gillette Stadium | MLS Cup 2002</span>
+    <h3>Ruiz glace les Revolution</h3>
+    <p>Le 20 octobre 2002, 61 316 spectateurs remplissent Gillette Stadium pour New England contre LA Galaxy. La finale tient jusqu'à la 113e minute, quand Carlos Ruiz marque le but en or. Le Massachusetts découvre qu'une défaite peut aussi devenir un souvenir de stade.</p>
+  </article>
+  <article class="mythic-card">
+    <span>TD Garden | Frozen Four 2015</span>
+    <h3>Providence renverse BU sur la glace</h3>
+    <p>Le 11 avril 2015, Providence College bat Boston University 4-3 au TD Garden et décroche son premier titre national de hockey. Un palet mal contrôlé relance la finale, Brandon Tanev tranche peu après: Boston assiste à un renversement de championnat.</p>
+  </article>
+</section>
+<section class="stat-row mythic-stat">
+  <div><span>3-2</span><p>D.C. United-LA Galaxy, 1996</p></div>
+  <div><span>2-1</span><p>Etats-Unis-Jamaïque, 2001</p></div>
+  <div><span>1-0</span><p>Galaxy-Revolution, 2002</p></div>
+  <div><span>4-3</span><p>Providence-Boston University, 2015</p></div>
+</section>
+        </section><section class="page campus-page">
+          <header class="folio">
+  <span class="folio-number">15</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Campus</span>
+</header>
+          <section class="article-splash campus-lead">
+  <div class="section-label">Campus</div>
+  <h2>Le sport universitaire, immense réserve de blasons et d'exigence</h2>
+  <p class="deck">Harvard, Boston University, Boston College, Northeastern, UMass et Westfield State: autour du Massachusetts, les campus fabriquent des couleurs, des mascottes et des rivalités qui nourrissent la mémoire sportive de la bannière.</p>
+</section>
+<section class="campus-grid">
+  <div class="crest red">H</div>
+  <div class="crest scarlet">BU</div>
+  <div class="crest maroon">BC</div>
+  <div class="crest black">NU</div>
+  <div class="crest navy">UM</div>
+  <div class="crest owl">OW</div>
+</section>
+<section class="campus-feature-grid">
+  <article class="column-article wide">
+    <figure class="campus-owl-image">
+      <img src="assets/westfield-owls-basketball.jpg" alt="Photo-illustration des Owls sur un parquet de basketball">
+      <figcaption>Les Owls font du gymnase un autre théâtre de la saison.</figcaption>
+    </figure>
+    <h3>Des logos au langage des couleurs</h3>
+    <p>Les blasons restent parfois muets, mais leurs couleurs parlent déjà aux habitués des salles.</p>
+    <p>Un maillot raconte une ville, une époque, une salle et parfois une légende.</p>
+  </article>
+  <article class="owl-feature">
+    <span class="owl-kicker">Westfield State</span>
+    <h3>Trente-cinq Owls honorés par Chi Alpha Sigma</h3>
+    <p>Westfield State Athletics a annoncé l'entrée de 35 student-athletes dans Chi Alpha Sigma, société nationale d'honneur du sport universitaire.</p>
+    <p>La sélection distingue des athlètes évoluant au niveau varsity intercollegiate, arrivés au rang junior après cinq semestres à temps plein, avec au moins 3.5 de moyenne cumulative.</p>
+    <p>Dans la promotion 2026, Joe Thomson représente le basketball masculin des Owls. Le parquet de Westfield rappelle ainsi que l'exigence se joue aussi entre les cours, les entraînements et les soirs de match.</p>
+    <div class="owl-stat-strip">
+      <div><b>35</b><span>Owls</span></div>
+      <div><b>3.5</b><span>moyenne</span></div>
+      <div><b>10e</b><span>classe</span></div>
+    </div>
+  </article>
+</section>
+        </section><section class="page marathon-page">
+          <header class="folio">
+  <span class="folio-number">16</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Marathon</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Endurance | Histoire</div>
+  <h2>Boston Marathon: le plus ancien rendez-vous moderne</h2>
+  <p class="deck">Né en 1897 et inspiré par les Jeux d'Athènes, le marathon de Boston est devenu la grande référence annuelle de la distance.</p>
+</section>
+<section class="marathon-layout">
+  <article class="column-article">
+    <h3>De 1897 à Patriots' Day</h3>
+    <p>Le Boston Marathon est lancé le 19 avril 1897, un an après le marathon olympique d'Athènes. La course s'installe vite comme un rite de printemps, porté par la B.A.A. et par une ville qui aime mesurer l'effort sur la durée.</p>
+    <p>La B.A.A. le présente comme le plus ancien marathon annuel du monde. Son histoire traverse l'évolution de la distance moderne, du départ originel vers Boston jusqu'au tracé devenu mythique entre Hopkinton, les collines de Newton et Boylston Street.</p>
+    <p>Charles Miglietti s'inscrit dans cette tradition d'endurance avec un chrono solide: 2h46 au Providence Marathon. Une performance qui dit la constance, la résistance mentale et l'art de ne pas discuter avec la pluie.</p>
+  </article>
+  <figure class="press-image charles-photo">
+    <img src="assets/charles-miglietti-providence.jpg" alt="Charles Miglietti au Providence Marathon">
+    <figcaption><strong>Charles Miglietti</strong><span>Providence, 2h46: un chrono qui force le respect.</span></figcaption>
+  </figure>
+</section>
+<section class="baseball-note">
+  <span>Fenway Park</span>
+  <h3>Le vieux parc qui garde Boston au présent</h3>
+  <p>Ouvert en 1912, Fenway Park est le plus ancien stade encore utilisé en Major League Baseball. Son Mur vert, son tableau manuel et ses angles serrés donnent aux Red Sox un décor immédiatement reconnaissable: ici, l'histoire ne se visite pas seulement, elle se joue encore.</p>
+</section>
+        </section><section class="page tanglewood-page">
+          <header class="folio">
+  <span class="folio-number">17</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Culture</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Culture | Berkshires</div>
+  <h2>Tanglewood, l'été symphonique du Massachusetts</h2>
+  <p class="deck">Dans les collines de l'ouest de l'Etat, le sport cède la place à une autre forme de rassemblement: des milliers d'auditeurs, une pelouse, un orchestre et la même tension des grands soirs.</p>
+</section>
+<section class="tanglewood-layout">
+  <article class="column-article tanglewood-main">
+    <h3>Une scène née du plein air</h3>
+    <p>L'histoire commence au milieu des années 1930, quand les Berkshires cherchent à installer un rendez-vous musical capable d'attirer le Boston Symphony Orchestra hors de la ville. L'idée est simple et audacieuse: faire entendre la grande musique dans un paysage ouvert, devant un public venu autant pour l'orchestre que pour l'expérience d'été.</p>
+    <p>La propriété Tanglewood est offerte au BSO par la famille Tappan. Le lieu devient rapidement la maison estivale de l'orchestre. Après une saison sous tente, la construction d'un vaste pavillon donne au festival sa silhouette durable: le Shed, associé à Serge Koussevitzky, chef qui voyait dans ce rendez-vous plus qu'une série de concerts.</p>
+    <p>Tanglewood devient aussi une école. Le Tanglewood Music Center accueille de jeunes musiciens, compositeurs et chefs, transformant le festival en laboratoire vivant. Dans le Massachusetts sportif et universitaire, cette scène rappelle qu'une région se reconnaît aussi à la manière dont elle écoute.</p>
+  </article>
+  <aside class="tanglewood-timeline">
+    <article><span>1930s</span><p>Les premiers concerts symphoniques d'été attirent le BSO vers les Berkshires.</p></article>
+    <article><span>1937</span><p>Tanglewood devient le grand rendez-vous estival de l'orchestre.</p></article>
+    <article><span>1938</span><p>Le Shed offre au festival une scène couverte et une identité durable.</p></article>
+    <article><span>1940</span><p>Le Tanglewood Music Center ouvre une autre page: former, transmettre, inventer.</p></article>
+  </aside>
+</section>
+        </section><section class="page bruins-page">
+          <header class="folio">
+  <span class="folio-number">18</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Hockey</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Hockey | Bruins</div>
+  <h2>Buffalo renvoie Boston à la maison</h2>
+  <p class="deck">Éliminés en six matchs par les Sabres au premier tour, les Bruins quittent les playoffs sans gloire. Pastrnak, seul survivant d'une série cruelle.</p>
+</section>
+<section class="news-layout">
+  <article class="column-article">
+    <h3>Une élimination qui fait mal</h3>
+    <p>Le TD Garden a vibré pour rien. Le 1er mai 2026, les Buffalo Sabres ont mis fin à la saison des Boston Bruins en remportant le sixième acte de leur série du premier tour 4-1, concluant le duel 4-2 en leur faveur. Une élimination cuisante dans une ville habituée aux succès: Boston quitte les playoffs dès le premier tour pour la deuxième fois en trois ans. L'humiliation du Game 4, déculottée 6-1 à domicile après une première période catastrophique, reste gravée dans les mémoires.</p>
+    <h3>Pastrnak en sauveur, Lyon en muraille</h3>
+    <p>David Pastrnak, capitaine de fait et meilleur pointeur de l'équipe en saison régulière avec 100 points (29 buts, 71 passes), a sauvé l'honneur en prolongation lors du Game 5. Mais le gardien adverse Alex Lyon a été impérial: 1,14 de moyenne et 95,5% d'arrêts sur cinq rencontres. Côté Buffalo, Rasmus Dahlin a mené la charge, offrant aux Sabres leur première qualification en deuxième tour depuis 2007.</p>
+  </article>
+  <aside class="lead-box dark">
+    <span>L'après-match</span>
+    <strong>Pastrnak interpelle la direction</strong>
+    <p>Dans les couloirs du TD Garden après le Game 6, le Tchèque a affiché une franchise brutale, interpellant publiquement la direction sur les choix de construction du roster. À Boston, on entend déjà parler de reconstruction silencieuse. L'été sera long.</p>
+  </aside>
+</section>
+<section class="stat-row">
+  <div><span>100</span><p>Points de Pastrnak en saison régulière</p></div>
+  <div><span>4-2</span><p>Série remportée par Buffalo</p></div>
+  <div><span>2007</span><p>Dernière demi-finale des Sabres avant 2026</p></div>
+</section>
+<section class="pull-quote">"La bannière du TD Garden continue de regarder depuis les cintres. Toutes, sauf une qui manque à l'appel."</section>
+        </section><section class="page revolution-page">
+          <header class="folio">
+  <span class="folio-number">19</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Soccer</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Soccer | MLS</div>
+  <h2>La Révolution en marche vers le Mondial</h2>
+  <p class="deck">2e de la Conférence Est, les Revolution vivent un printemps en feu. Et Gillette Stadium sera au cœur de la Coupe du Monde 2026.</p>
+</section>
+<section class="news-layout">
+  <article class="column-article">
+    <h3>Carles Gil, cœur battant du Massachusetts</h3>
+    <p>Il n'y a pas qu'au TD Garden que Boston joue la gagne. À Foxborough, les New England Revolution caracolent en tête de l'Est avec 6 victoires, 1 défaite et 3 nuls après dix journées. Le 2 mai, le capitaine Carles Gil a sauvé les meubles d'un penalty dans le temps additionnel face à Charlotte FC, son cinquantième but en MLS dans sa 200e apparition. L'Espagnol reste le moteur d'une équipe qui score à un rythme de 2 buts par match, deuxième meilleur ratio de l'histoire du club.</p>
+    <h3>Foxborough, capitale d'été 2026</h3>
+    <p>Pour un public français installé à Boston, la dynamique du soccer américain se lit en chiffres. La MLS compte 30 franchises et diffuse ses matchs sur Apple TV+ dans le monde entier. Gillette Stadium, 64 628 places, accueillera cet été 7 matchs de la Coupe du Monde FIFA 2026 (11 juin–19 juillet), dont un quart de finale le 9 juillet. La France de Mbappé et Dembélé pourrait fouler la pelouse du Massachusetts. Les billets sont déjà épuisés.</p>
+  </article>
+  <aside class="lead-box">
+    <span>Nouveau stade</span>
+    <strong>Mystic River, 25 000 places</strong>
+    <p>Les Revolution ont officialisé en janvier un projet de stade dédié au soccer, capacité 25 000, sur les rives de la Mystic River. Un signal fort pour une franchise longtemps à l'ombre des Patriots.</p>
+  </aside>
+</section>
+<section class="stat-row">
+  <div><span>50</span><p>Buts en MLS pour Gil (200e match)</p></div>
+  <div><span>7</span><p>Matchs Mondial 2026 à Gillette</p></div>
+  <div><span>25 000</span><p>Capacité du futur stade Revolution</p></div>
+</section>
+<section class="pull-quote">"Boston gagne sur tous les terrains. Manque juste une bannière, quelque part entre Foxborough et l'ouest."</section>
+        </section><section class="page pwhl-page">
+          <header class="folio">
+  <span class="folio-number">20</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Hockey</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Hockey féminin | PWHL</div>
+  <h2>Les Fleet font trembler le TD Garden</h2>
+  <p class="deck">17 850 spectateurs, record américain de la PWHL. Boston Fleet joue les playoffs et change l'histoire du hockey féminin pro.</p>
+</section>
+<section class="news-layout">
+  <article class="column-article">
+    <h3>Un sold out qui fait date</h3>
+    <p>Le 11 avril 2026, le TD Garden n'était plus seulement la maison des Celtics et des Bruins. Sold out depuis des semaines, l'arène de 17 850 places a accueilli son premier match de la Professional Women's Hockey League. Avec lui, un record d'affluence pour la discipline aux États-Unis. Boston Fleet contre Montréal Victoire: une rencontre au sommet du classement, dans une atmosphère que le hockey féminin n'avait jamais connue en sol américain.</p>
+    <h3>Frankel, l'or olympique au filet</h3>
+    <p>La Fleet a terminé la saison régulière 2025-26 avec 62 points en 30 matchs, 2e rang derrière Montréal, encaissant seulement 45 buts: meilleure défense de la ligue. Le crédit revient à la gardienne Aerin Frankel, auteure d'un record absolu en PWHL avec 8 blanchissages, elle qui sortait d'une médaille d'or avec Team USA aux Jeux olympiques de Milan-Cortina 2026 (5-0). En playoffs face à Ottawa, la série est lancée au Tsongas Center de Lowell.</p>
+  </article>
+  <aside class="lead-box dark">
+    <span>Affluence</span>
+    <strong>+17% en une saison</strong>
+    <p>La PWHL a franchi le seuil des 653 000 spectateurs cumulés en saison régulière, en hausse de plus de 17%. Une ligue, deux saisons d'existence, et déjà des records que personne n'osait imaginer.</p>
+  </aside>
+</section>
+<section class="stat-row">
+  <div><span>17 850</span><p>Spectateurs au TD Garden, record US PWHL</p></div>
+  <div><span>8</span><p>Blanchissages de Frankel, record PWHL</p></div>
+  <div><span>+17%</span><p>Hausse d'affluence saison 2025-26</p></div>
+</section>
+<section class="pull-quote">"Au TD Garden, ce soir-là, toutes les bannières étaient à leur place. La grande disparition viendrait quelques semaines plus tard."</section>
+        </section><section class="page patriots-page">
+          <header class="folio">
+  <span class="folio-number">21</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Football US</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Football US | Patriots</div>
+  <h2>Patriots: reconstruire autour de Maye</h2>
+  <p class="deck">Super Bowl perdu, draft sous pression. Les Patriots ont choisi: Drake Maye sera leur franchise quarterback pour la prochaine décennie.</p>
+</section>
+<section class="news-layout">
+  <article class="column-article">
+    <h3>Santa Clara, la défaite cuisante</h3>
+    <p>Le 8 février 2026 à Santa Clara, les New England Patriots se sont inclinés 29-13 face aux Seattle Seahawks lors du Super Bowl LX. Deux interceptions, un fumble, six sacks subis: Drake Maye, 22 ans, a payé le prix fort d'une ligne offensive insuffisante sur la plus grande scène du sport américain. Pourtant, les Pats étaient bien là, à leur premier Super Bowl depuis 2019, portés par la saison régulière phénoménale de leur jeune QB: 4 394 yards, 31 touchdowns, seulement 8 interceptions, 3e meilleur grade PFF de la ligue (90,1).</p>
+    <h3>Caleb Lomu, la muraille du futur</h3>
+    <p>Le mouvement de la franchise a été immédiat. Au NFL Draft, les Patriots ont tradé pour monter au rang 28 et sélectionner Caleb Lomu, tackle offensif de l'Université de l'Utah, 21 ans, 1,98 m, 142 kg. Sur 359 snaps en protection l'an passé, Lomu n'a concédé zéro sack, taux de pression de 2,3% seulement. Le chantier est clair: protéger Maye mieux qu'en playoffs, quand il avait subi 21 sacks en postseason.</p>
+  </article>
+  <aside class="lead-box">
+    <span>L'héritier</span>
+    <strong>Drake Maye, 22 ans</strong>
+    <p>Sélectionné en 3e position en 2024, grade PFF de 90,1, Pro Bowl, victoire de l'AFC Est, Super Bowl atteint en deuxième saison: la trajectoire rappelle un certain numéro 12. Foxborough y croit.</p>
+  </aside>
+</section>
+<section class="stat-row">
+  <div><span>4 394</span><p>Yards passés par Maye en saison 2025</p></div>
+  <div><span>31</span><p>Touchdowns lancés par Maye</p></div>
+  <div><span>28e</span><p>Choix Patriots draft 2026: Caleb Lomu</p></div>
+</section>
+<section class="pull-quote">"Foxborough mise sur un quarterback de 22 ans. Le Garden, lui, espère seulement retrouver son emblème avant l'été."</section>
+        </section><section class="page quiz-page">
+          <header class="folio">
+  <span class="folio-number">22</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Quiz</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Quiz sport</div>
+  <h2>Douze questions pour les lecteurs de L'Équipe</h2>
+  <p class="deck">Les lecteurs de L'Équipe testent leur mémoire sportive.</p>
+</section>
+<section class="quiz-grid">
+<article class="quiz-item">
+  <span>1</span>
+  <p>Quel professeur canadien a rédigé les premières règles du basketball ?</p>
+  <div class="write-line"></div>
+</article>
+
+<article class="quiz-item">
+  <span>2</span>
+  <p>Quel sport William Morgan a-t-il créé en 1895 ?</p>
+  <div class="write-line"></div>
+</article>
+
+<article class="quiz-item">
+  <span>3</span>
+  <p>Quel bâtiment de Boston accueille les Celtics et les Bruins ?</p>
+  <div class="write-line"></div>
+</article>
+
+<article class="quiz-item">
+  <span>4</span>
+  <p>Combien de joueurs d&#x27;une même équipe sont sur le terrain en basketball ?</p>
+  <div class="write-line"></div>
+</article>
+
+<article class="quiz-item">
+  <span>5</span>
+  <p>Comment appelle-t-on le geste qui consiste à envoyer le ballon très fort vers le sol en volleyball ?</p>
+  <div class="write-line"></div>
+</article>
+
+<article class="quiz-item">
+  <span>6</span>
+  <p>Quelle équipe NBA porte le vert à Boston ?</p>
+  <div class="write-line"></div>
+</article>
+
+<article class="quiz-item">
+  <span>7</span>
+  <p>Quel joueur français est associé aux Spurs de San Antonio ?</p>
+  <div class="write-line"></div>
+</article>
+
+<article class="quiz-item">
+  <span>8</span>
+  <p>Dans quel Etat se trouve le Memorial Stadium de Lincoln cité dans l&#x27;article mintonette ?</p>
+  <div class="write-line"></div>
+</article>
+
+<article class="quiz-item">
+  <span>9</span>
+  <p>Quel objet manque dans le grand dossier de ce journal ?</p>
+  <div class="write-line"></div>
+</article>
+
+<article class="quiz-item">
+  <span>10</span>
+  <p>Quel mot anglais désigne le chef d&#x27;équipe sur le terrain ?</p>
+  <div class="write-line"></div>
+</article>
+
+<article class="quiz-item">
+  <span>11</span>
+  <p>Quel sport se joue avec un service, une réception et une attaque ?</p>
+  <div class="write-line"></div>
+</article>
+
+<article class="quiz-item">
+  <span>12</span>
+  <p>Quel sport utilisait à l&#x27;origine deux paniers de pêches ?</p>
+  <div class="write-line"></div>
+</article>
+</section>
+        </section><section class="page kids-page">
+          <header class="folio">
+  <span class="folio-number">23</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Jeux</span>
+</header>
+          <section class="article-splash tight">
+  <div class="section-label">Jeux</div>
+  <h2>Mots mêlés, mots croisés et oeil de reporter</h2>
+  <p class="deck">Une page de détente pour les jeunes lecteurs de L'Équipe.</p>
+</section>
+<section class="kids-layout compact-kids">
+  <div class="word-search"><span>BASKETBOSTON</span><span>VOLLEYMORGAN</span><span>SPURSCELTIC</span><span>GARDENSPORTS</span><span>NAISMITHBALL</span><span>MINTONETTES</span><span>BANNIEREMASS</span><span>CHAMPIONTEAM</span><span>COURTJOURNAL</span><span>DUNKPASSSHOT</span></div>
+  <aside>
+    <h3>Mots à trouver</h3>
+    <ul class="word-list"><li>BASKET</li><li>BOSTON</li><li>VOLLEY</li><li>MORGAN</li><li>SPURS</li><li>CELTIC</li><li>GARDEN</li><li>BANNIERE</li><li>COURT</li><li>DUNK</li></ul>
+  </aside>
+</section>
+<section class="game-stack">
+  <figure><img src="assets/jeux-mots-meles-grand.png" alt="Grand mots mêlés sportif"></figure>
+  <figure><img src="assets/jeux-mots-croises.png" alt="Mots croisés sportif"></figure>
+</section>
+        </section><section class="page credits">
+          <header class="folio">
+  <span class="folio-number">24</span>
+  <span class="folio-title">L’ÉQUIPE</span>
+  <span class="folio-section">Ours</span>
+</header>
+          <section class="credits-page">
+  <div class="section-label">Ours</div>
+  <h2>Crédits du journal sportif</h2>
+  <section class="credits-grid">
+    <article><span>Edition</span><p>L'Équipe, supplément sport de Boston, édition spéciale 2026.</p></article>
+    <article><span>Images</span><p>Photo-illustrations: archives de L'Équipe et documents transmis.</p></article>
+    <article><span>Repères historiques</span><p>Basketball: James Naismith, 1891. Volleyball: William G. Morgan, 1895.</p></article>
+    <article><span>Article mintonette</span><p>D'après les archives sportives américaines et Lincoln.</p></article>
+    <article><span>Campus</span><p>Westfield State Athletics, Chi Alpha Sigma Honors Society, 6 avril 2026.</p></article>
+    <article><span>Matchs mythiques</span><p>Repères issus des archives NBA, MLB, NHL, Patriots, Harvard Athletics, MLS, U.S. Soccer, NCAA et FIFA.</p></article>
+  </section>
+  <div class="back-headline">L'ÉQUIPE</div>
+  <p class="backline">Un journal sérieux sur le sport, un vol impossible au TD Garden, et une bannière que toute la ville espère revoir.</p>
+</section>
+        </section>
+            </main>
+          </body>
+        </html>
